@@ -100,7 +100,7 @@ install_dotfiles
 if [ "$(uname -s)" == "Darwin" ]
 then
   echo "installing dependencies"
-  if . bin/dotc > /tmp/dotfiles-dot 2>&1
+  if . bin/dotcmd > /tmp/dotfiles-dot 2>&1
   then
     echo "dependencies installed"
   else

@@ -1,7 +1,6 @@
 [user]
-  name = Yoshua Wuyts
-  email = yoshuawuyts@gmail.com
-	signingkey = D97B99ED650ED277
+  name = Simon Brix
+  email = vdb.simon@gmail.com
 
 [color]
   ui = auto
@@ -91,7 +90,7 @@
 [branch]
 
 [github]
-  user = yoshuawuyts
+  user = Briix
 
 [difftool]
   prompt = false
@@ -116,5 +115,3 @@
 	clean = git-lfs clean %f
 	smudge = git-lfs smudge %f
 	required = true
-[commit]
-	gpgsign = true

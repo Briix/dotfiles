@@ -1,7 +1,7 @@
 ###########################
 #  Configuration
 ###########################
-username="yoshuawuyts"
+username="simonbrix"
 # if this ever breaks run "$ brew prefix <toolname>"
 export PATH="$PATH:/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/X11/bin:/Users/$username/.config/base16-shell"
 export PATH="$PATH:/Users/$USER/src/$username/dotfiles/bin"
@@ -39,7 +39,7 @@ export DOTFILES=$HOME/src/$username/dotfiles
 export TEMPLATES=$HOME/src/$username/templates
 
 # your project folder that we can `c [tab]` to
-export PROJECTS=~/src
+export PROJECTS=~/Projects
 
 # source every .zsh file in this rep
 for config_file ($ZSH/**/*.zsh) source $config_file
