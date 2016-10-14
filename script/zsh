@@ -1,6 +1,6 @@
 #!/bin/sh
 mkdir -p zsh/bundle
-curl -L https://raw.githubusercontent.com/zsh-users/antigen/master/antigen.zsh \
+curl -L https://cdn.rawgit.com/zsh-users/antigen/v1.2.0/bin/antigen.zsh \
   >  zsh/bundle/antigen.zsh
 
 git clone https://github.com/chriskempson/base16-shell.git \
