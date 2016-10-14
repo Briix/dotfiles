@@ -16,16 +16,6 @@ export PATH="/usr/local/opt/curl/bin:$PATH"
 export MANPATH="/usr/local/opt/coreutils/libexec/gnuman:$MANPATH"
 export MANPATH="/usr/local/opt/gnu-tar/libexec/gnuman:$MANPATH"
 
-rustch="$(rustup toolchain list | grep default | awk '{print $1}')"
-export RUST_SRC_PATH="~/.multirust/toolchains/$rustch/lib/rustlib/src/rust/src"
-
-# source gcloud
-source '/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc'
-source '/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc'
-
-# source pgp conf
-source "$HOME/.profile"
-
 # start zle
 zmodload zsh/zle
 
@@ -34,9 +24,8 @@ export LC_ALL="en_US.UTF-8"
 export TERM=screen-256color
 
 # shortcut to this dotfiles path is $ZSH
-export ZSH=$HOME/src/$username/dotfiles
-export DOTFILES=$HOME/src/$username/dotfiles
-export TEMPLATES=$HOME/src/$username/templates
+export ZSH=$HOME/.dotfiles
+export DOTFILES=$HOME/.dotfiles
 
 # your project folder that we can `c [tab]` to
 export PROJECTS=~/Projects
@@ -90,8 +79,3 @@ export GHI_PAGER=less
 # configure rbenv
 eval "$(rbenv init -)"
 
-# load nvm
-export NVM_DIR="/Users/anon/.nvm"
-if [ -s "$NVM_DIR/nvm.sh" ]; then
-  . "$NVM_DIR/nvm.sh"
-fi
