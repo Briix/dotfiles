@@ -4,7 +4,7 @@
 username="simonbrix"
 # if this ever breaks run "$ brew prefix <toolname>"
 export PATH="$PATH:/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/X11/bin:/Users/$username/.config/base16-shell"
-export PATH="$PATH:/Users/$USER/src/$username/dotfiles/bin"
+export PATH="$PATH:/Users/$USER/.dotfiles/bin"
 export PATH="$PATH:/Users/$USER/.config/base16-shell"
 export PATH="$PATH:$HOME/.rbenv/bin"
 export PATH="$PATH:$HOME/.cargo/bin"

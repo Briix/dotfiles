@@ -13,8 +13,6 @@ call plug#begin('~/.vim/plugged')
 
 Plug 'Chiel92/vim-autoformat'
 Plug 'Raimondi/delimitMate'
-Plug 'SirVer/ultisnips'
-Plug 'Valloric/YouCompleteMe'
 Plug 'airblade/vim-gitgutter'
 Plug 'bling/vim-airline'
 Plug 'bruno-/vim-husk'
@@ -25,7 +23,6 @@ Plug 'ervandew/supertab'
 Plug 'godlygeek/tabular'
 Plug 'hashivim/vim-terraform'
 Plug 'honza/vim-snippets'
-Plug 'jayflo/vim-skip'
 Plug 'junegunn/vim-peekaboo'
 Plug 'kelan/gyp.vim'
 Plug 'mattn/emmet-vim'
@@ -34,14 +31,11 @@ Plug 'moll/vim-node'
 Plug 'mustache/vim-mustache-handlebars'
 Plug 'nathanaelkane/vim-indent-guides'
 Plug 'racer-rust/vim-racer'
-Plug 'rust-lang/rust.vim'
 Plug 'scrooloose/syntastic'
 Plug 'sheerun/vim-polyglot'
 Plug 'sjl/gundo.vim'
 Plug 'spwhitt/vim-nix'
 Plug 'tejr/vim-tmux'
-Plug 'ternjs/tern_for_vim'
-Plug 'terryma/vim-multiple-cursors'
 Plug 'tikhomirov/vim-glsl'
 Plug 'tpope/vim-abolish'
 Plug 'tpope/vim-commentary'
@@ -74,6 +68,12 @@ if &term =~ '256color'
   set t_ut=
 endif
 
+" netrw config
+let g:netrw_liststyle=0         " thin (change to 3 for tree)
+let g:netrw_banner=0            " no banner
+let g:netrw_altv=1              " open files on right
+let g:netrw_preview=1           " open previews vertically
+
 " General Config
 " ==============
 let mapleader=' '
@@ -85,10 +85,12 @@ set showmode                    " Show current mode down the bottom
 set gcr=a:blinkon0              " Disable cursor blink
 set autoread                    " Reload files changed outside vim
 set laststatus=2                " Always show status line
+set number
 set clipboard=unnamed           " Use system clipboard
 set hidden                      " Buffers can exist in the background
 set splitright                  " Opens vertical split right of current window
 set splitbelow                  " Opens horizontal split below current window
+imap <C-c> <CR><Esc>O
 
 " Mouse
 " ======
@@ -114,7 +116,9 @@ set directory=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
 filetype plugin on
 filetype indent on
 set autoindent
+set copyindent
 set smartindent
+set preserveindent
 set smarttab
 set shiftwidth=2
 set softtabstop=2
