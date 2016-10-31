@@ -10,7 +10,8 @@ call plug#begin('~/.vim/plugged')
 
 " =======
 " Plugins
-
+Plug 'elmcast/elm-vim'
+Plug 'editorconfig/editorconfig-vim'
 Plug 'Chiel92/vim-autoformat'
 Plug 'Raimondi/delimitMate'
 Plug 'airblade/vim-gitgutter'
@@ -31,7 +32,6 @@ Plug 'moll/vim-node'
 Plug 'mustache/vim-mustache-handlebars'
 Plug 'nathanaelkane/vim-indent-guides'
 Plug 'racer-rust/vim-racer'
-Plug 'scrooloose/syntastic'
 Plug 'sheerun/vim-polyglot'
 Plug 'sjl/gundo.vim'
 Plug 'spwhitt/vim-nix'
@@ -265,3 +265,6 @@ let g:racer_experimental_completer = 1
 
 " JavaScript
 set completeopt=longest,menuone
+
+" Elm
+let g:elm_format_autosave = 1 " Autoformat code on save
