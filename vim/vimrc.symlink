@@ -11,6 +11,7 @@ call plug#begin('~/.vim/plugged')
 " =======
 " Plugins
 
+Plug 'elmcast/elm-vim'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'Chiel92/vim-autoformat'
 Plug 'Raimondi/delimitMate'
@@ -260,3 +261,6 @@ let g:racer_experimental_completer = 1
 
 " JavaScript
 set completeopt=longest,menuone
+
+" Elm
+let g:elm_format_autosave = 1 " Autoformat code on save
