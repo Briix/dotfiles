@@ -48,6 +48,10 @@ Plug 'tpope/vim-surround'
 Plug 'tpope/vim-unimpaired'
 Plug 'vim-scripts/BufOnly.vim'
 Plug 'wakatime/vim-wakatime'
+Plug 'jalvesaq/Nvim-R'
+Plug 'sophacles/vim-processing'
+Plug 'pangloss/vim-javascript'
+
 " End vim-plug
 " ============
 call plug#end()
@@ -78,7 +82,6 @@ let g:netrw_preview=1           " open previews vertically
 " General Config
 " ==============
 let mapleader=' '
-set nonumber                    " Line numbers are good
 set backspace=indent,eol,start  " Allow backspace in insert mode
 set history=1000                " Store lots of :cmdline history
 set showcmd                     " Show incomplete cmds down the bottom
@@ -86,7 +89,7 @@ set showmode                    " Show current mode down the bottom
 set gcr=a:blinkon0              " Disable cursor blink
 set autoread                    " Reload files changed outside vim
 set laststatus=2                " Always show status line
-set number
+set nonumber
 set clipboard=unnamed           " Use system clipboard
 set hidden                      " Buffers can exist in the background
 set splitright                  " Opens vertical split right of current window
@@ -216,30 +219,6 @@ let g:gitgutter_sign_column_always = 1
 let g:gitgutter_eager = 0
 highlight Comment cterm=italic
 
-" YCM-UltiSnip-SuperTab:
-" extracted from https://github.com/Valloric/YouCompleteMe/issues/36
-" =====================
-let g:ycm_key_list_select_completion = ['<C-n>', '<Down>']
-let g:ycm_key_list_previous_completion = ['<C-p>', '<Up>']
-let g:SuperTabDefaultCompletionType = '<C-n>'
-
-" better key bindings for UltiSnipsExpandTrigger
-let g:UltiSnipsExpandTrigger="<c-Space>"
-let g:UltiSnipsJumpForwardTrigger = "<tab>"
-let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
-
-" UltiSnip
-" ========
-let g:UltiSnipsEditSplit="vertical"
-let g:UltiSnipsSnippetDirectories=['MyUltiSnips']
-let g:UltiSnipsListSnippets="<c-l>"
-
-" YCM
-" ===
-let g:ycm_complete_in_comments = 1
-let g:ycm_seed_identifiers_with_syntax = 1
-let g:ycm_collect_identifiers_from_comments_and_strings = 1
-
 " Searching
 " ==========
 if executable('ag')
@@ -267,3 +246,8 @@ set completeopt=longest,menuone
 
 " Elm
 let g:elm_format_autosave = 1 " Autoformat code on save
+
+" R
+let R_in_buffer = 0
+let R_applescript = 0
+let R_tmux_split = 1
