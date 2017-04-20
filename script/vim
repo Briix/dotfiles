@@ -17,11 +17,3 @@ curl -fLo ~/.config/nvim/autoload/plug.vim \
 
 # install all the plugins
 vim +PlugInstall +qall
-
-# install YCM plugins
-# https://github.com/Valloric/YouCompleteMe#mac-os-x
-cd ~/.config/nvim/plugged/YouCompleteMe
-./install.py --clang-completer
-
-# rust completion
-cargo install racer

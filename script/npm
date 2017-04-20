@@ -1,0 +1,5 @@
+#!/bin/sh
+
+npm config set init.author.name "Simon Brix"
+npm config set init.author.email "vdb.simon@gmail.com"
+npm config set init.author.github "Briix"

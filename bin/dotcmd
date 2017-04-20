@@ -33,7 +33,6 @@ brew cask update && brew cask upgrade
 cat ~/.dotfiles/homebrew/Brewfile | xargs -n1 brew install
 cat ~/.dotfiles/homebrew/Caskfile | xargs -n1 brew cask install
 cat ~/.dotfiles/npm/Packagefile | xargs -n1 npm install -g
-cat ~/.dotfiles/pip/Packagefile | xargs -n1 pip install
 
 # Upgrade vim plugins
 nvim -c 'PluginInstall'

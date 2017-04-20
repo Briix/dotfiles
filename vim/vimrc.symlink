@@ -11,42 +11,17 @@ call plug#begin('~/.vim/plugged')
 " =======
 " Plugins
 
-Plug 'elmcast/elm-vim'
+Plug 'junegunn/goyo.vim'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'Chiel92/vim-autoformat'
 Plug 'Raimondi/delimitMate'
 Plug 'airblade/vim-gitgutter'
 Plug 'bling/vim-airline'
-Plug 'bruno-/vim-husk'
 Plug 'chriskempson/base16-vim'
-Plug 'ctrlpvim/ctrlp.vim'
-Plug 'epmatsw/ag.vim'
-Plug 'ervandew/supertab'
-Plug 'godlygeek/tabular'
-Plug 'hashivim/vim-terraform'
-Plug 'honza/vim-snippets'
-Plug 'junegunn/vim-peekaboo'
-Plug 'kelan/gyp.vim'
-Plug 'mattn/emmet-vim'
-Plug 'mhinz/vim-startify'
 Plug 'moll/vim-node'
-Plug 'mustache/vim-mustache-handlebars'
-Plug 'nathanaelkane/vim-indent-guides'
-Plug 'racer-rust/vim-racer'
 Plug 'sheerun/vim-polyglot'
-Plug 'sjl/gundo.vim'
-Plug 'spwhitt/vim-nix'
-Plug 'tejr/vim-tmux'
-Plug 'tikhomirov/vim-glsl'
-Plug 'tpope/vim-abolish'
 Plug 'tpope/vim-commentary'
-Plug 'tpope/vim-dispatch'
-Plug 'tpope/vim-fugitive'
-Plug 'tpope/vim-projectionist'
-Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-surround'
-Plug 'tpope/vim-unimpaired'
-Plug 'vim-scripts/BufOnly.vim'
 Plug 'wakatime/vim-wakatime'
 Plug 'jalvesaq/Nvim-R'
 Plug 'sophacles/vim-processing'
@@ -124,10 +99,8 @@ set softtabstop=2
 set tabstop=2
 set expandtab
 
-autocmd Filetype elm setlocal ts=4 sw=4 sts=0
-
 set list listchars=tab:\ \ ,trail:·   " Display tabs and trailing spaces visually
-"set colorcolumn=80                    " Show are marker at 80 chars
+set colorcolumn=80                    " Show are marker at 80 chars
 set nowrap                            " Don't wrap lines
 set linebreak                         " Wrap lines at convenient points
 
@@ -143,6 +116,7 @@ set wildmode=longest,list,full
 set wildmenu                    " Enable ctrl-n and ctrl-p to scroll thru matches
 set wildignore=*.o,*.obj,*~     " Stuff to ignore when tab completing
 set wildignore+=*vim/backups*
+set wildignore+=node_modules/*,bower_components/*
 
 " Scrolling
 " =========
@@ -172,22 +146,12 @@ if has ('nvim')
   set ttimeoutlen=0
 endif
 
-" Syntastic
-" =========
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
-
 " Plugin overrides
 source ~/.vim/autocmd.vim
 source ~/.vim/format.vim
 source ~/.vim/common.vim
 source ~/.vim/tmux.vim
-source ~/.vim/ctrlp.vim
-source ~/.vim/snippets.vim
 source ~/.vim/writing.vim
-source ~/.vim/syntastic.vim
 
 " Colorscheme
 " ===========
@@ -218,28 +182,6 @@ let g:airline#extensions#hunks#enabled = 0
 let g:gitgutter_sign_column_always = 1
 let g:gitgutter_eager = 0
 highlight Comment cterm=italic
-
-" Searching
-" ==========
-if executable('ag')
-  set grepprg=ag\ --nogroup\ --nocolor " Use ag over grep
-  let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""' " Use ag in CtrlP
-  let g:ctrlp_use_caching = 0 " Ag is fast enough that CtrlP doesn't need cache
-  nnoremap K :grep! "\b<C-R><C-W>\b"<CR>:cw<CR>
-endif
-
-" Startify
-" ========
-let g:startify_list_order = [ [ '  Recent files:' ], 'dir' ]
-
-" Rust
-" ====
-let g:rust_recommended_style = 0
-let g:rustfmt_autosave = 0
-set hidden
-let g:racer_cmd = "/Users/" . $USER . "/.cargo/bin/racer/target/release/racer"
-let $RUST_SRC_PATH= "/Users/" . $USER . "/.cargo/bin/racer/src/"
-let g:racer_experimental_completer = 1
 
 " JavaScript
 set completeopt=longest,menuone
