@@ -7,9 +7,8 @@ OS X configuration files. There's no place like `~/`.
 ## Installation
 `dotfiles` expects to run in an `xrvt` terminal to display colors correctly.
 ```sh
-$ mkdir -p ~/src/yw
-$ git clone https://github.com/yoshuawuyts/dotfiles.git ~/src/yw/dotfiles
-$ cd ~/src/yw/dotfiles
+$ git clone https://github.com/Briix/dotfiles.git ~/.dotfiles
+$ cd ~/.dotfiles
 $ ./script/{setup,vim,zsh,tmux}
 ```
 
