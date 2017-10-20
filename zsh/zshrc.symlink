@@ -52,6 +52,7 @@ antigen bundle zsh-users/fizsh
 antigen bundle zsh-users/zsh-completions
 antigen bundle zsh-users/zsh-history-substring-search
 antigen bundle zsh-users/zsh-syntax-highlighting
+antigen bundle mafredri/zsh-async
 
 # load autosuggest as last
 antigen bundle tarruda/zsh-autosuggestions
