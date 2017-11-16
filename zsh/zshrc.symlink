@@ -33,15 +33,6 @@ export PROJECTS=~/Projects
 for config_file ($ZSH/**/*.zsh) source $config_file
 
 ###########################
-# Colors
-###########################
-# base-16
-BASE16_SHELL="$HOME/.config/base16-shell/scripts/base16-eighties.sh"
-if [ -s $BASE16_SHELL ]; then
-  source $BASE16_SHELL
-fi
-
-###########################
 #  Plugins
 ###########################
 antigen bundle marzocchi/zsh-notify

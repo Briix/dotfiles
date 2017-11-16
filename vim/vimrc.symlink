@@ -17,6 +17,7 @@ Plug 'Chiel92/vim-autoformat'
 Plug 'Raimondi/delimitMate'
 Plug 'airblade/vim-gitgutter'
 Plug 'bling/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
 Plug 'chriskempson/base16-vim'
 Plug 'moll/vim-node'
 Plug 'sheerun/vim-polyglot'
@@ -154,17 +155,10 @@ source ~/.vim/format.vim
 source ~/.vim/common.vim
 source ~/.vim/tmux.vim
 
-" Colorscheme
-" ===========
-let g:hybrid_use_Xresources = 1
-set background=dark
-let base16colorspace=256
-colorscheme base16-eighties
-
 " Airline
 " =======
 let g:airline_powerline_fonts = 0
-let g:airline_theme = 'eighties'
+let g:airline_theme='minimalist'
 if !exists('g:airline_symbols')
   let g:airline_symbols = {}
 endif
@@ -178,11 +172,15 @@ let g:airline_symbols.whitespace = 'Ξ'
 let g:airline#extensions#hunks#enabled = 0
 let g:airline#extensions#hunks#enabled = 0
 
+" Colorscheme
+" ===========
+let g:hybrid_use_Xresources = 1
+source ~/.vim/colors/moonscape.vim
+
 " Git Gutter
 " ==========
 set signcolumn=yes
 let g:gitgutter_eager = 0
-highlight Comment cterm=italic
 
 " JavaScript
 set completeopt=longest,menuone
