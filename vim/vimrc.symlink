@@ -15,7 +15,11 @@ Plug 'Chiel92/vim-autoformat'
 Plug 'Raimondi/delimitMate'
 Plug 'airblade/vim-gitgutter'
 Plug 'bling/vim-airline'
+<<<<<<< HEAD
 Plug 'bruno-/vim-husk'
+=======
+Plug 'vim-airline/vim-airline-themes'
+>>>>>>> deb84ba... new iterm/vim colors
 Plug 'chriskempson/base16-vim'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'epmatsw/ag.vim'
@@ -186,17 +190,10 @@ source ~/.vim/snippets.vim
 source ~/.vim/writing.vim
 source ~/.vim/syntastic.vim
 
-" Colorscheme
-" ===========
-let g:hybrid_use_Xresources = 1
-set background=dark
-let base16colorspace=256
-colorscheme base16-eighties
-
 " Airline
 " =======
 let g:airline_powerline_fonts = 0
-let g:airline_theme = 'eighties'
+let g:airline_theme='minimalist'
 if !exists('g:airline_symbols')
   let g:airline_symbols = {}
 endif
@@ -210,11 +207,15 @@ let g:airline_symbols.whitespace = 'Ξ'
 let g:airline#extensions#hunks#enabled = 0
 let g:airline#extensions#hunks#enabled = 0
 
+" Colorscheme
+" ===========
+let g:hybrid_use_Xresources = 1
+source ~/.vim/colors/moonscape.vim
+
 " Git Gutter
 " ==========
 let g:gitgutter_sign_column_always = 1
 let g:gitgutter_eager = 0
-highlight Comment cterm=italic
 
 " YCM-UltiSnip-SuperTab:
 " extracted from https://github.com/Valloric/YouCompleteMe/issues/36
