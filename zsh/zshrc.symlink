@@ -47,7 +47,6 @@ fi
 ###########################
 #  Plugins
 ###########################
-antigen bundle marzocchi/zsh-notify
 antigen bundle zsh-users/fizsh
 antigen bundle zsh-users/zsh-completions
 antigen bundle zsh-users/zsh-history-substring-search
