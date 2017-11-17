@@ -11,6 +11,7 @@ export PATH="$PATH:$HOME/.cargo/bin"
 export PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
 export PATH="/usr/local/opt/gnu-tar/libexec/gnubin:$PATH"
 export PATH="/usr/local/opt/curl/bin:$PATH"
+export PATH="$PATH:/usr/local/sbin:/usr/local/bin:/usr/local/bin/dev:/usr/sbin:/usr/bin:/sbin:/bin:/usr/local/bin/dev/deployment"
 
 # man pages
 export MANPATH="/usr/local/opt/coreutils/libexec/gnuman:$MANPATH"
@@ -33,27 +34,6 @@ export PROJECTS=~/Projects
 # source every .zsh file in this rep
 for config_file ($ZSH/**/*.zsh) source $config_file
 
-###########################
-# Colors
-###########################
-# base-16
-BASE16_SHELL="$HOME/.config/base16-shell/scripts/base16-eighties.sh"
-if [ -s $BASE16_SHELL ]; then
-  source $BASE16_SHELL
-fi
-
-###########################
-#  Plugins
-###########################
-antigen bundle marzocchi/zsh-notify
-antigen bundle zsh-users/fizsh
-antigen bundle zsh-users/zsh-completions
-antigen bundle zsh-users/zsh-history-substring-search
-antigen bundle zsh-users/zsh-syntax-highlighting
-
-# load autosuggest as last
-antigen bundle tarruda/zsh-autosuggestions
-
 # initialize autocomplete here, otherwise functions won't be loaded
 autoload -U compinit
 compinit
@@ -75,7 +55,4 @@ fi
 
 # default programs
 export GHI_PAGER=less
-
-# configure rbenv
-eval "$(rbenv init -)"
 
