@@ -1,6 +1,6 @@
 [user]
   name = Simon Brix
-  email = vdb.simon@gmail.com
+  email = s.brix@eslgaming.com
 
 [color]
   ui = auto
@@ -76,7 +76,7 @@
 
 [core]
   excludesfile = /opt/boxen/config/git/gitignore
-	attributesfile = /Users/sib/.gitattributes
+  attributesfile = /Users/sib/.gitattributes
 
 [init]
   templatedir = ~/.git_template
