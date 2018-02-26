@@ -18,15 +18,13 @@ Plug 'Raimondi/delimitMate'
 Plug 'airblade/vim-gitgutter'
 Plug 'bling/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-Plug 'chriskempson/base16-vim'
 Plug 'moll/vim-node'
 Plug 'sheerun/vim-polyglot'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-surround'
-Plug 'wakatime/vim-wakatime'
-Plug 'jalvesaq/Nvim-R'
-Plug 'sophacles/vim-processing'
 Plug 'pangloss/vim-javascript'
+Plug 'ctrlpvim/ctrlp.vim'
+Plug 'w0rp/ale'
 
 " End vim-plug
 " ============
@@ -120,6 +118,7 @@ set wildmenu                    " Enable ctrl-n and ctrl-p to scroll thru matche
 set wildignore=*.o,*.obj,*~     " Stuff to ignore when tab completing
 set wildignore+=*vim/backups*
 set wildignore+=node_modules/*,bower_components/*
+let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|git'
 
 " Scrolling
 " =========
@@ -182,13 +181,29 @@ source ~/.vim/colors/moonscape.vim
 set signcolumn=yes
 let g:gitgutter_eager = 0
 
+" Ale Plugin
+" ==========
+let g:ale_lint_on_text_changed = 'never' " Only lint when text is saved.
+let g:ale_completion_enabled = 1         " Enable completion where enabled.
+let g:ale_set_highlights = 1             " Highlight code in file.
+let g:ale_set_quickfix = 1               " Use the quicklist buffer.
+let g:ale_set_loclist = 0                " Don't use loclist.
+let g:ale_fix_on_save = 1                " Auto fix js.
+let g:ale_open_list = 1                  " Auto open quicklist buffer.
+nmap <C-]> :ALEGoToDefinitionInTab<CR>
+
+let g:ale_fixers = {
+\   'javascript': [],
+\   'vue': [],
+\}
+
+let g:ale_linters = {
+\   'javascript': ['standard'],
+\   'vue': [],
+\}
+
 " JavaScript
 set completeopt=longest,menuone
 
-" Elm
-let g:elm_format_autosave = 1 " Autoformat code on save
-
-" R
-let R_in_buffer = 0
-let R_applescript = 0
-let R_tmux_split = 1
+" Vue
+let g:vue_disable_pre_processors=1
