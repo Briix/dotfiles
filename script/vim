@@ -8,7 +8,7 @@ mkdir -p "$HOME/.config"
 ln -s "$HOME/.vim" "$HOME/.config/nvim"
 
 # install python extensions for nvim
-sudo -H pip2 install neovim
+sudo -H pip3 install neovim
 
 # get vim plug so plugins can be installed
 curl -fLo ~/.config/nvim/autoload/plug.vim \
