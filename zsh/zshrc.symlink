@@ -3,6 +3,9 @@
 ###########################
 username="simonbrix"
 export DEVCODE=sib
+
+#alias
+alias vim="nvim"
 alias tsh-dev="tsh ssh --user=sib --proxy=teleport.de.esl.systems --cluster=office $@"
 alias tshdevvm="tsh-dev dev@sib.devvm.de.esl.systems"
 
