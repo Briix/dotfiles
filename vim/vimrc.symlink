@@ -27,6 +27,17 @@ Plug 'ctrlpvim/ctrlp.vim'
 Plug 'w0rp/ale'
 Plug 'kristijanhusak/vim-carbon-now-sh'
 Plug 'rust-lang/rust.vim'
+Plug 'autozimu/LanguageClient-neovim', {
+\ 'branch': 'next',
+\ 'do': 'bash install.sh',
+\ }
+if has('nvim')
+  Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+else
+  Plug 'Shougo/deoplete.nvim'
+  Plug 'roxma/nvim-yarp'
+  Plug 'roxma/vim-hug-neovim-rpc'
+endif
 
 " End vim-plug
 " ============
@@ -115,6 +126,7 @@ set nofoldenable        " Don't fold by default
 
 " Completion
 " ==========
+let g:deoplete#enable_at_startup = 1
 set wildmode=longest,list,full
 set wildmenu                    " Enable ctrl-n and ctrl-p to scroll thru matches
 set wildignore=*.o,*.obj,*~     " Stuff to ignore when tab completing
@@ -204,6 +216,23 @@ let g:ale_linters = {
 \   'vue': [],
 \   'scss': [],
 \}
+
+" Language Server
+" ================
+" Required for operations modifying multiple buffers like rename.
+set hidden
+
+let g:LanguageClient_serverCommands = {
+      \ 'rust': ['rustup', 'run', 'nightly', 'rls'],
+      \ 'javascript': ['javascript-typescript-stdio'],
+      \ 'css': ['css-languageserver --stdio'],
+      \ 'scss': ['css-languageserver --stdio'],
+      \ }
+
+nnoremap <silent> K :call LanguageClient_textDocument_hover()<CR>
+nnoremap <silent> gd :call LanguageClient_textDocument_definition()<CR>
+nnoremap <silent> <F2> :call LanguageClient_textDocument_rename()<CR>
+noremap <silent> R :call LanguageClient_textDocument_rename()<CR>
 
 " JavaScript
 set completeopt=longest,menuone
