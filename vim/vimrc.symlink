@@ -25,6 +25,8 @@ Plug 'tpope/vim-surround'
 Plug 'pangloss/vim-javascript'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'w0rp/ale'
+Plug 'kristijanhusak/vim-carbon-now-sh'
+Plug 'rust-lang/rust.vim'
 
 " End vim-plug
 " ============
@@ -200,6 +202,7 @@ let g:ale_fixers = {
 let g:ale_linters = {
 \   'javascript': ['standard'],
 \   'vue': [],
+\   'scss': [],
 \}
 
 " JavaScript
@@ -207,3 +210,6 @@ set completeopt=longest,menuone
 
 " Vue
 let g:vue_disable_pre_processors=1
+
+" Carbon
+vnoremap <Leader>c :CarbonNowSh<CR>
