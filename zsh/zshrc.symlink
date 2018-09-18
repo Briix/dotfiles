@@ -21,6 +21,25 @@ export PATH="$ANDROID_HOME/platform-tools:$PATH"
 export PATH="$ANDROID_HOME/tools:$PATH"
 export PATH="$ANDROID_HOME/build-tools/25.0.0:$PATH"
 
+#pushd, popd, dirs
+function d() {
+  if [ -z "$1" ]
+    then
+      dirs -v
+  else
+    dirs $1
+  fi
+}
+
+function pd() {
+  if [ -z "$1" ]
+    then
+      popd
+  else
+    pushd $1
+  fi
+}
+
 # man pages
 export MANPATH="/usr/local/opt/coreutils/libexec/gnuman:$MANPATH"
 export MANPATH="/usr/local/opt/gnu-tar/libexec/gnuman:$MANPATH"
