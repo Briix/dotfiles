@@ -76,7 +76,7 @@ set showmode                    " Show current mode down the bottom
 set gcr=a:blinkon0              " Disable cursor blink
 set autoread                    " Reload files changed outside vim
 set laststatus=2                " Always show status line
-set nonumber
+set number                      " Show line numbers
 set clipboard=unnamed           " Use system clipboard
 set hidden                      " Buffers can exist in the background
 set splitright                  " Opens vertical split right of current window
@@ -203,8 +203,9 @@ let g:ale_set_highlights = 1             " Highlight code in file.
 let g:ale_set_quickfix = 1               " Use the quicklist buffer.
 let g:ale_set_loclist = 0                " Don't use loclist.
 let g:ale_fix_on_save = 1                " Auto fix js.
-let g:ale_open_list = 1                  " Auto open quicklist buffer.
+let g:ale_open_list = 0                  " Auto open quicklist buffer.
 nmap <C-]> :ALEGoToDefinitionInTab<CR>
+nmap <C-h> :ALEHover<CR>
 
 let g:ale_fixers = {
 \   'javascript': [],
@@ -212,7 +213,7 @@ let g:ale_fixers = {
 \}
 
 let g:ale_linters = {
-\   'javascript': ['standard'],
+\   'javascript': ['eslint'],
 \   'vue': [],
 \   'scss': [],
 \}
