@@ -13,6 +13,7 @@ alias tshdevvm="tsh-dev dev@sib.devvm.de.esl.systems"
 export ANDROID_HOME="/Users/sib/Documents/android-sdk"
 
 # if this ever breaks run "$ brew prefix <toolname>"
+export PATH="$PATH:/usr/local/Cellar/gradle/5.3.1/bin"
 export PATH="$PATH:/usr/local/bin:/usr/local:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/X11/bin:/Users/$username/.config/base16-shell"
 export PATH="$PATH:/Users/$USER/.dotfiles/bin"
 export PATH="$PATH:/Users/$USER/.config/base16-shell"
@@ -20,9 +21,11 @@ export PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
 export PATH="/usr/local/opt/gnu-tar/libexec/gnubin:$PATH"
 export PATH="/usr/local/opt/curl/bin:$PATH"
 export PATH="$HOME/.yarn/bin:$PATH"
+export PATH="$HOME/.fastlane/bin:$PATH"
 export PATH="$ANDROID_HOME/platform-tools:$PATH"
 export PATH="$ANDROID_HOME/tools:$PATH"
-export PATH="$ANDROID_HOME/build-tools/25.0.0:$PATH"
+export PATH="$ANDROID_HOME/build-tools/28.0.3:$PATH"
+export PATH="$PATH:/usr/local/lib/node_modules/node/bin/node"
 
 #pushd, popd, dirs
 function d() {
