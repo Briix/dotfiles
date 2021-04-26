@@ -1,0 +1,7 @@
+{
+  "typescript.preferences.quoteStyle": "double",
+  "tsserver.log": "normal",
+  "tsserver.npm": "/usr/local/bin/npm",
+  "suggest.enablePreview": true,
+  "diagnostic.checkCurrentLine": true
+}
